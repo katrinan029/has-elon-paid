@@ -1,1 +1,22 @@
-<h1>Hello World!</h1>
+<html>
+  <head>
+    <title>Has Elon Paid</title>
+  </head>
+  <body>
+    <h1>Has Elon Paid</h1>
+    <p id="timer"></p>
+    <script>
+      const startDate = new Date("November 4, 2022").getTime();
+      const timer = setInterval(function() {
+        const currentTime = new Date().getTime();
+        const timeElapsed = currentTime - startDate;
+        const days = Math.floor(timeElapsed / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeElapsed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeElapsed % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeElapsed % (1000 * 60)) / 1000);
+        document.getElementById("timer").innerHTML =
+          days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+      }, 1000);
+    </script>
+  </body>
+</html>
